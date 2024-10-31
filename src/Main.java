@@ -1,13 +1,15 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
- class StreamFilter
+class StreamFilter
 {
     public static void main(String arg[])
     {
-        List<Integer>list = Arrays.asList(5,10,15,35,20);
+        List<Integer>marks = Arrays.asList(50,20,15,35,20,55,60);
 
-        List<Integer>filteredList = list.stream().filter(i->i%2==0).toList();
 
-        System.out.println(filteredList);
+        List<Integer>Passed = marks.stream().filter(i->i > 35).collect(Collectors.toList());
+
+        System.out.println(Passed);
     }
 }
